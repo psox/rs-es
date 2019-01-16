@@ -9,6 +9,7 @@
         "actstr",
         "clippy",
         "deserialization",
+        "reqwest",
         "serde",
         "stringify",
         "structs"
