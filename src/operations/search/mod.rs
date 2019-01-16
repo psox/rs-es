@@ -184,7 +184,7 @@ impl SortField {
         SortField(FieldBased::new(
             field.into(),
             SortFieldInner {
-                order: order,
+                order,
                 ..Default::default()
             },
             NoOuter,
@@ -357,7 +357,7 @@ impl Serialize for Sort {
 
 impl Sort {
     pub fn new(fields: Vec<SortBy>) -> Self {
-        Sort { fields: fields }
+        Sort { fields }
     }
 
     /// Convenience function for a single field default
@@ -413,7 +413,7 @@ impl<'a> From<&'a Sort> for OptionVal {
 impl<'a, 'b> SearchURIOperation<'a, 'b> {
     pub fn new(client: &'a mut Client) -> SearchURIOperation<'a, 'b> {
         SearchURIOperation {
-            client: client,
+            client,
             indexes: &[],
             doc_types: &[],
             options: Options::new(),
@@ -619,7 +619,7 @@ pub struct SearchQueryOperation<'a, 'b> {
 impl<'a, 'b> SearchQueryOperation<'a, 'b> {
     pub fn new(client: &'a mut Client) -> SearchQueryOperation<'a, 'b> {
         SearchQueryOperation {
-            client: client,
+            client,
             indexes: &[],
             doc_types: &[],
             options: Options::new(),
@@ -1053,8 +1053,8 @@ where
     pub fn iter(self, client: &mut Client, scroll: Duration) -> ScanIterator<T> {
         ScanIterator {
             scan_result: self,
-            scroll: scroll,
-            client: client,
+            scroll,
+            client,
             page: vec![],
         }
     }

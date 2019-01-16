@@ -43,7 +43,7 @@ pub struct CountURIOperation<'a, 'b> {
 impl<'a, 'b> CountURIOperation<'a, 'b> {
     pub fn new(client: &'a mut Client) -> CountURIOperation<'a, 'b> {
         CountURIOperation {
-            client: client,
+            client,
             indexes: &[],
             doc_types: &[],
             options: Options::new(),
@@ -118,7 +118,7 @@ pub struct CountQueryOperation<'a, 'b> {
 impl<'a, 'b> CountQueryOperation<'a, 'b> {
     pub fn new(client: &'a mut Client) -> CountQueryOperation<'a, 'b> {
         CountQueryOperation {
-            client: client,
+            client,
             indexes: &[],
             doc_types: &[],
             options: Options::new(),

@@ -195,10 +195,10 @@ where
 {
     pub fn new(client: &'a mut Client, actions: &'b [Action<S>]) -> Self {
         BulkOperation {
-            client: client,
+            client,
             index: None,
             doc_type: None,
-            actions: actions,
+            actions,
             options: Options::new(),
         }
     }

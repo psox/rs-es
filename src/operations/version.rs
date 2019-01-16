@@ -27,7 +27,7 @@ pub struct VersionOperation<'a> {
 
 impl<'a> VersionOperation<'a> {
     pub fn new(client: &'a mut Client) -> Self {
-        VersionOperation { client: client }
+        VersionOperation { client }
     }
 
     pub fn send(&mut self) -> Result<VersionResult, EsError> {

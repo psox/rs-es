@@ -22,6 +22,9 @@
 //! Warning: at the time of writing the majority of such APIs are currently
 //! unimplemented.
 
+#![allow(unknown_lints)]
+#![warn(clippy::all)]
+
 #[macro_use]
 pub mod util;
 

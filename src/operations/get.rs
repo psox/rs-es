@@ -64,10 +64,10 @@ pub struct GetOperation<'a, 'b> {
 impl<'a, 'b> GetOperation<'a, 'b> {
     pub fn new(client: &'a mut Client, index: &'b str, id: &'b str) -> Self {
         GetOperation {
-            client: client,
-            index: index,
+            client,
+            index,
             doc_type: None,
-            id: id,
+            id,
             options: Options::new(),
         }
     }

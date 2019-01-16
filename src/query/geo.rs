@@ -82,7 +82,7 @@ impl Shape {
     pub fn new<A: Into<String>>(shape_type: A, coordinates: Vec<(f64, f64)>) -> Shape {
         Shape {
             shape_type: shape_type.into(),
-            coordinates: coordinates,
+            coordinates,
         }
     }
 }

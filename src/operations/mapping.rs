@@ -66,8 +66,8 @@ pub struct MappingOperation<'a, 'b> {
 impl<'a, 'b> MappingOperation<'a, 'b> {
     pub fn new(client: &'a mut Client, index: &'b str) -> MappingOperation<'a, 'b> {
         MappingOperation {
-            client: client,
-            index: index,
+            client,
+            index,
             mapping: None,
             settings: None,
         }

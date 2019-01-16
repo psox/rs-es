@@ -16,6 +16,9 @@
 
 //! Helper for common requirements when producing/parsing JSON
 
+#![allow(unknown_lints)]
+#![warn(clippy::all)]
+
 use serde::ser::{Serialize, SerializeMap, Serializer};
 
 /// To tell Serde to skip various fields
@@ -74,9 +77,9 @@ pub struct FieldBased<F, I, O> {
 impl<F, I, O> FieldBased<F, I, O> {
     pub fn new(field: F, inner: I, outer: O) -> Self {
         FieldBased {
-            field: field,
-            inner: inner,
-            outer: outer,
+            field,
+            inner,
+            outer,
         }
     }
 }

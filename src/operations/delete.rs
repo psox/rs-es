@@ -50,10 +50,10 @@ impl<'a, 'b> DeleteOperation<'a, 'b> {
         id: &'b str,
     ) -> DeleteOperation<'a, 'b> {
         DeleteOperation {
-            client: client,
-            index: index,
-            doc_type: doc_type,
-            id: id,
+            client,
+            index,
+            doc_type,
+            id,
             options: Options::new(),
         }
     }

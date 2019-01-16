@@ -176,7 +176,7 @@ pub struct GeoBounds<'a> {
 impl<'a> GeoBounds<'a> {
     pub fn new(field: &'a str) -> Self {
         GeoBounds {
-            field: field,
+            field,
             ..Default::default()
         }
     }
@@ -221,7 +221,7 @@ pub struct ScriptedMetric<'a> {
 impl<'a> ScriptedMetric<'a> {
     pub fn new(map_script: &'a str) -> ScriptedMetric<'a> {
         ScriptedMetric {
-            map_script: map_script,
+            map_script,
             ..Default::default()
         }
     }

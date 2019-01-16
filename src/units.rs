@@ -79,10 +79,7 @@ pub struct Duration {
 
 impl Duration {
     pub fn new(amt: i64, unit: DurationUnit) -> Duration {
-        Duration {
-            amt: amt,
-            unit: unit,
-        }
+        Duration { amt, unit }
     }
 
     pub fn months(amt: i64) -> Duration {
@@ -368,10 +365,7 @@ pub struct Distance {
 
 impl Distance {
     pub fn new(amt: f64, unit: DistanceUnit) -> Distance {
-        Distance {
-            amt: amt,
-            unit: unit,
-        }
+        Distance { amt, unit }
     }
 }
 

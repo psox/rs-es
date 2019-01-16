@@ -69,7 +69,7 @@ pub struct TermQueryInner {
 impl TermQueryInner {
     fn new(value: JsonVal) -> Self {
         TermQueryInner {
-            value: value,
+            value,
             ..Default::default()
         }
     }

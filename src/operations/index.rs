@@ -66,9 +66,9 @@ impl<'a, 'b, E: Serialize + 'b> IndexOperation<'a, 'b, E> {
         doc_type: &'b str,
     ) -> IndexOperation<'a, 'b, E> {
         IndexOperation {
-            client: client,
-            index: index,
-            doc_type: doc_type,
+            client,
+            index,
+            doc_type,
             id: None,
             options: Options::new(),
             document: None,

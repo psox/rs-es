@@ -36,7 +36,7 @@ pub struct RefreshOperation<'a, 'b> {
 impl<'a, 'b> RefreshOperation<'a, 'b> {
     pub fn new(client: &'a mut Client) -> RefreshOperation {
         RefreshOperation {
-            client: client,
+            client,
             indexes: &[],
         }
     }

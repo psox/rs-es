@@ -110,7 +110,7 @@ pub struct Filter<'a> {
 
 impl<'a> Filter<'a> {
     pub fn new(filter: &'a query::Query) -> Filter<'a> {
-        Filter { filter: filter }
+        Filter { filter }
     }
 }
 
@@ -124,7 +124,7 @@ pub struct Filters<'a> {
 
 impl<'a> Filters<'a> {
     pub fn new(filters: HashMap<&'a str, &'a query::Query>) -> Filters<'a> {
-        Filters { filters: filters }
+        Filters { filters }
     }
 }
 
@@ -148,7 +148,7 @@ pub struct Missing<'a> {
 
 impl<'a> Missing<'a> {
     pub fn new(field: &'a str) -> Missing<'a> {
-        Missing { field: field }
+        Missing { field }
     }
 }
 
@@ -162,7 +162,7 @@ pub struct Nested<'a> {
 
 impl<'a> Nested<'a> {
     pub fn new(path: &'a str) -> Nested<'a> {
-        Nested { path: path }
+        Nested { path }
     }
 }
 
@@ -197,7 +197,7 @@ pub struct Children<'a> {
 
 impl<'a> Children<'a> {
     pub fn new(doc_type: &'a str) -> Children<'a> {
-        Children { doc_type: doc_type }
+        Children { doc_type }
     }
 }
 
@@ -447,7 +447,7 @@ pub struct ExtendedBounds {
 
 impl ExtendedBounds {
     pub fn new(min: i64, max: i64) -> ExtendedBounds {
-        ExtendedBounds { min: min, max: max }
+        ExtendedBounds { min, max }
     }
 }
 
@@ -473,7 +473,7 @@ pub struct Histogram<'a> {
 impl<'a> Histogram<'a> {
     pub fn new(field: &'a str) -> Histogram<'a> {
         Histogram {
-            field: field,
+            field,
             ..Default::default()
         }
     }
@@ -574,7 +574,7 @@ impl<'a> DateHistogram<'a> {
         I: Into<Interval>,
     {
         DateHistogram {
-            field: field,
+            field,
             interval: interval.into(),
             ..Default::default()
         }
@@ -622,11 +622,11 @@ impl<'a> GeoDistance<'a> {
         ranges: &'a [GeoDistanceInst],
     ) -> GeoDistance<'a> {
         GeoDistance {
-            field: field,
-            origin: origin,
+            field,
+            origin,
             unit: None,
             distance_type: None,
-            ranges: ranges,
+            ranges,
         }
     }
 
@@ -655,7 +655,7 @@ pub struct GeohashGrid<'a> {
 impl<'a> GeohashGrid<'a> {
     pub fn new(field: &'a str) -> Self {
         GeohashGrid {
-            field: field,
+            field,
             ..Default::default()
         }
     }
@@ -1122,7 +1122,7 @@ impl RangeResult {
             buckets.insert(k.clone(), RangeBucketResult::from(v, aggs)?);
         }
 
-        Ok(RangeResult { buckets: buckets })
+        Ok(RangeResult { buckets })
     }
 }
 
