@@ -39,7 +39,7 @@ pub mod units;
 use std::time;
 
 use reqwest::{
-    header::ACCEPT,
+    header::{ACCEPT, CONTENT_TYPE},
     RequestBuilder, StatusCode, Url,
 };
 
@@ -125,7 +125,10 @@ impl Client {
         if !username.is_empty() {
             method = method.basic_auth(username, self.base_url.password());
         }
-        let result = method.header(ACCEPT, "application/json").send()?;
+        let result = method
+            .header(ACCEPT, "application/json")
+            .header(CONTENT_TYPE, "application/json")
+            .send()?;
         do_req(result)
     }
 }
